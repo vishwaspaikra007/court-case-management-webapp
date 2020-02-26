@@ -1,0 +1,18 @@
+.lawyerdetails {
+    position: absolute;
+    top: 0;
+    background: white;
+    max-width: 60%;
+    color: darkslategrey;
+} .lawyerdetails > div {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+} .closeLawyerDetails {
+    padding: 5px;
+    border-radius: 10px;
+    background: #f18282;
+    cursor: pointer;
+} .layer > .li {
+    margin-left: 10px;
+}

@@ -1,0 +1,61 @@
+<div class="container">
+    <form onsubmit="signup(event)">
+      <div class="row">
+        <h4>Fill The Details</h4>
+        <div class="input-group input-group-icon">
+          <input type="text" placeholder="Full Name" ng-model="formData['name']" required/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input id="email" type="email" placeholder="Email Adress" ng-model="formData['email']" required/>
+          <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+            <input type="text" placeholder="Mobile" ng-model="formData['mobile']" required/>
+            <div class="input-icon"><i class="fa fa-phone"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+              <input type="text" placeholder="Address" ng-model="formData['address']" required/>
+              <div class="input-icon"><i class="fa fa-map-marker"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input type="text" placeholder="Pincode" ng-model="formData['pincode']" required/>
+                <div class="input-icon"><i class="fa fa-neuter"></i></div>
+              </div>
+        <div class="input-group input-group-icon">
+          <input id="password" type="password" placeholder="Password" ng-model="formData['password']" required/>
+          <div class="input-icon"><i class="fa fa-key"></i></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <h4>Date of Birth</h4>
+          <div class="input-group">
+            <div class="col-third">
+              <input id="date" type="text" placeholder="DD" required/>
+            </div>
+            <div class="col-third">
+              <input id="month" type="text" placeholder="MM" required/>
+            </div>
+            <div class="col-third">
+              <input id="year" type="text" placeholder="YYYY" required/>
+            </div>
+          </div>
+        </div>
+        <div class="col-half">
+          <h4>Gender</h4>
+          <div class="input-group">
+            <input type="radio" name="gender" value="male" id="gender-male"  ng-model="formData['gender']" required/>
+            <label for="gender-male">Male</label>
+            <input type="radio" name="gender" value="female" id="gender-female"  ng-model="formData['gender']" required/>
+            <label for="gender-female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" value = "Submit" class = "btn button">
+      </div>
+  
+    </form>
+  </div>
+  </div>

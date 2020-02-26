@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Client - Sign Up Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<script src="https://kit.fontawesome.com/15e3edaa10.js" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="signup.css"> -->
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/signup.css">
+<link rel="stylesheet" href="./css/lawyerdetails.css">
+<!-- <link rel="stylesheet" href="./css/happiness.css"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body id="idForJS" ng-app="postModule" ng-controller="postController">
+
+<div class="first">
+  <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+  }
+
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: linear-gradient(to right, #f46b45, #eea849); */
+    background: url("https://2197sy3yui9t1i08cg3c3gxl-wpengine.netdna-ssl.com/wp-content/themes/managemylawsuits/images/banner2_legal_office.jpg") no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+ 
+  nav {
+    display: grid;
+    grid-template-columns: 10% 0.6fr 0.3fr 10%;
+    min-height: 10vh;
+    color: white;
+    align-items: center;
+  }
+  nav ul{
+      list-style: none;
+      visibility: hidden;
+  }
+  nav ul li{
+      display:inline;
+      margin-left: 4rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    background: #ffffff55;
+    display: block;
+}
+  #logo {
+    grid-column: 2/3;
+    font-size: 24px;
+  }
+  
+  .hamburger {
+    justify-self: end;
+    color: white;
+    cursor: pointer;
+  }
+  
+  section {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightskyblue; */
+  }
+  
+  .hero {
+    height: 60%;
+    width: 100%;
+    position: relative;
+    background:  rgb(54, 62, 136,0.4);
+  }
+  
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .headline {
+    position: absolute;
+    top: 68%;
+    left: 10%;
+    font-size: 5rem;
+    transform: translate(-20%, -70%);
+    color: white;
+    z-index: 3;
+  }
+  
+  .hero::after {
+    content: "";
+    background:  rgb(54, 62, 136,0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.3;
+    top: 0;
+  }
+  .section1{
+      width: 100%;
+      height: 200vh;
+      /* margin-top: -0.4%; */
+      background: white;
+  }
+
+  .section11{
+    width: 100%;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section12{
+    width:26.5rem;
+    height: 30rem;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-top: 6px solid blue;
+    margin-left: 6%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 2px 14px 0px rgba(0,0,0,0.75);
+    float: left;
+}
+.section12 h3{
+    font-size: 2rem;
+}
+.section12 p{
+    text-align: center;
+}
+.section11 h2{
+    font-size: 4rem;
+    font-family: monospace;
+}
+  .section2{
+    width: 100%;
+    height: 120vh;
+    margin:-5% auto;
+    background: navy;
+}
+.section21{
+    width: 100%;
+    height:20%;
+    display: flex;
+    justify-content:center;
+    color: lightseagreen;
+    align-items: center;
+    font-size:2em; 
+}
+.section22{
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section22 img{
+    width: 45%;
+    height: 45%;
+}
+.section22 h2{
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    color: white;
+}
+.section22.lawyer h2{
+    margin-left: 5rem;
+}
+footer{
+    width: 100%;
+    height: 20rem;
+    margin:0% auto;
+    background: #222;
+}
+.footer1{
+    padding: 2rem;
+    /* color:  */
+    color: lightseagreen;
+}
+.footer2 ul{
+    padding: 1.2rem;
+    margin-left: 10rem;
+}
+.footer2 ul li{
+    list-style: none;
+    color: white;
+    line-height: 1.6rem;
+}
+.footer2 h3{
+    margin-left: 10rem;
+}
+.footer2{
+    padding: 1rem;
+    width: 50rem;
+    float: left;
+    color: lightseagreen;
+}
+.footer3{
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: gainsboro;
+}
+
+  </style>
+  <header>
+    <nav>
+      <h3 id="logo">Happiness</h3>
+      <ul>
+              <li><a href="#">Home</a></li>
+              <li><a ng-click="display()" href="#!client-signup">CLient SignUp</a></li>
+              <li><a ng-click="display()" href="#!lawyer-signup">lawyer SignUp</a></li>
+              <li><a ng-click="display()" href ="#!login">SignIn</a></li>
+          </ul>
+      <span class="hamburger" onclick="cross()" ><i class="fa fa-bars"></i></span>
+    </nav>
+    <section>
+      <div class="hero">
+        <!-- <img src="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/article_images/2020/01/27/gavel%20%281%29-1580135790.jpg?itok=tyMExtGf" alt="" /> -->
+        <h1 class="headline">Demo</h1>
+      </div>
+    </section>
+  </header>
+
+  <div class="slider"></div>
+  <br><br><br><br><br>
+  <div class="section1">
+      <div class="section11">
+          <h2>Features</h2>
+      </div>
+      <div class="section12">
+              <img src="https://img.icons8.com/nolan/150/invoice.png"><br><br>
+          <h3>Invoices To Clients</h3><br><br>
+          <p>Provide clients to pay bills to the hired lawyers</p>
+      </div>
+      <div class="section12">
+              <img src="https://img.icons8.com/nolan/150/appointment-reminders.png"><br><br>
+          <h3>Notification</h3><br><br>
+          <p>Lawyers can get notifications about clients</p>
+      </div>
+      <div class="section12">
+              <img src="https://img.icons8.com/nolan/150/star.png"><br><br>
+          <h3>Ratings</h3><br><br>
+          <p>Clients can hire lawyers according to lawyers ratings</p>
+      </div>
+      
+  </div>
+  <div class="section2" id = "getstarted">
+      <div class="section21">
+          <h1>Get Started</h1>
+      </div>
+      <a href="#!login"><div class="section22">
+          <img src="./img/teamwork.svg" alt="">
+          <h2>With Client</h2>
+      </div></a>
+      <a href="#!login"><div class="section22 lawyer">
+              <img src="./img/lawyer.svg" alt="">
+              <h2>With Lawyer</h2>
+          </div></a>
+  </div>
+  <footer>
+      <div class="footer1">
+          <h1>Court Case Management</h1>
+      </div>
+      <div class="footer2">
+          <h3>Software Features</h3>
+          <ul>
+              <li>Addition of case by clients</li>
+              <li>Feedback System</li>
+              <li>Rating System</li>
+              <li>Payment Gateway</li>
+          </ul>
+      </div>
+      <div class="footer2">
+              <h3>Contact Us</h3>
+              <ul>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+91 7878786382</li>
+                      <li><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;demo@gmail.com</li>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+917593043920</li>
+                      <li><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;ecase@gov.in</li>
+                  </ul>
+          </div>
+          <hr width="90%" style="margin:auto;">
+          <div class="footer3">
+              <h4>&copy;&nbsp;Made By &lt;Step_Ahead&gt;</h4>
+          </div>
+  </footer>
+
+</div>
+<ng-view>
+
+
+
+</ng-view>
+
+<div class="lawyerdetails" ng-if="allLawyersData">
+  <div ng-click="closeLawyerDetails()" class="closeLawyerDetails">close</div>
+  <div class="layer" ng-repeat="lawyer in allLawyersData">
+    {{lawyer.data.name}}<br>
+      <div class="li">{{lawyer.data.email}}</div>
+      <div class="li">{{lawyer.data.gender}}</div>
+      <div class="li">{{lawyer.data.mobile}}</div>
+      <div class="li">{{lawyer.data.address}}</div>
+  </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script src="./js/firebaseConfig.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/fillStorage.js"></script>
+<script src="./dashboard/clientDashBoard.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+crossorigin="anonymous"
+></script>
+<!-- <script
+src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+crossorigin="anonymous"
+></script> -->
+<script src="./js/happiness.js"></script>
+
+<script>
+
+
+    var app = angular.module("postModule", ["ngRoute"]);
+    var postController = ($scope, $http, $location) => {
+
+      $scope.user = {}
+      $scope.allLawyersData;
+      $scope.formData = {
+        name: "",
+        email: "",
+        mobile: "",
+        address: "",
+        pincode: "",
+        password: "",
+        dob: "",
+        gender: ""
+      } 
+      $scope.display = () => {
+        let header = document.querySelector('.first');
+        
+        header.style.display = "none";
+      }
+     $scope.hello = (x) => {
+      // signup();
+      let date = document.querySelector('#date').value
+      let month = document.querySelector('#month').value
+      let year = document.querySelector('#year').value
+      let dob = month + '/' + date + '/' + year;
+      $scope.formData.dob = new Date(dob);
+      console.log($scope.formData)
+      fillStorage('clients', $scope.formData)
+        .then(dat => {
+          $scope.user = x;
+          console.log("from")
+          console.log( $scope.user.user.email)
+          $location.path('/dashboard');
+        })
+    }
+    $scope.setPath = (x) => {
+      $scope.user = x;
+      console.log("from")
+      console.log( $scope.user.user.email)
+      $location.path('/dashboard');
+    }
+
+    $scope.getAllLawyers = () => {
+      allLawyers().then(x => {
+        console.log($scope.allLawyersData)
+
+        $scope.allLawyersData = x;
+        console.log($scope.allLawyersData)
+        $scope.$apply();
+      });
+    }
+    $scope.closeLawyerDetails = ()=> {
+      $scope.allLawyersData = "";
+     }
+      
+    }
+
+    app.config(function($routeProvider) {
+    $routeProvider
+    .when("/lawyer-signup", {
+      templateUrl : "./templates/lawyer-signup.htm"
+    })
+    .when("/login", {
+      templateUrl : "./templates/login.htm"
+    })
+    .when("/client-signup", {
+      templateUrl : "./templates/client-signup.htm"
+    })
+    .when("/dashboard", {
+      templateUrl : "./templates/clientDashboard.htm",
+      })
+    .when("/blue", {
+      templateUrl : "blue.htm"
+    });
+  });
+  
+  app.controller("postController",postController);
+
+
+
+  </script>
+  <!-- for happiness -->
+
+
+
+</body>
+</html>
